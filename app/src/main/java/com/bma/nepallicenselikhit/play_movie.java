@@ -1,4 +1,4 @@
-package com.techacharya.nepallicenselikhit;
+package com.bma.nepallicenselikhit;
 
 import android.media.MediaPlayer;
 import android.net.Uri;

@@ -1,4 +1,4 @@
-package com.techacharya.nepallicenselikhit;
+package com.bma.nepallicenselikhit;
 
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -18,18 +18,18 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class questionpaper extends AppCompatActivity {
+public class trialtips extends AppCompatActivity {
 
     private TextView url;
     private WebView webview;
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference reference = firebaseDatabase.getReference();
-    private DatabaseReference childreference1 = reference.child("paper");
+    private DatabaseReference childreference1 = reference.child("trialtips");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_questionpaper);
+        setContentView(R.layout.activity_trialtips);
 
 
         url= (TextView) findViewById(R.id.url);
@@ -84,8 +84,8 @@ public class questionpaper extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-            super.onBackPressed();
-      }
+         super.onBackPressed();
+       }
 
 
 

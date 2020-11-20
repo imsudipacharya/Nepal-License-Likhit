@@ -1,4 +1,4 @@
-package com.techacharya.nepallicenselikhit;
+package com.bma.nepallicenselikhit;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,34 +10,24 @@ import androidx.cardview.widget.CardView;
 import com.facebook.ads.AudienceNetworkAds;
 import com.facebook.ads.InterstitialAd;
 
-public class card3 extends AppCompatActivity {
-
- private InterstitialAd mInterstitialAd1,mInterstitialAd2;
-
+public class MainActivity extends AppCompatActivity {
+private InterstitialAd mInterstitialAd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_card3);
+        setContentView(R.layout.activity_main);
 
         AudienceNetworkAds.initialize(this);
-        mInterstitialAd1 = new InterstitialAd(this, "349716825991491_386042502358923");
-        mInterstitialAd1.loadAd();
+        mInterstitialAd = new InterstitialAd(this, "349716825991491_349717149324792");
+        mInterstitialAd.loadAd();
 
-
-        AudienceNetworkAds.initialize(this);
-        mInterstitialAd2 = new InterstitialAd(this, "349716825991491_386042589025581");
-        mInterstitialAd2.loadAd();
 
 
         final CardView card1 = findViewById(R.id.card1);
         card1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mInterstitialAd2.isAdLoaded()) {
-
-                    mInterstitialAd2.show();
-                }
-                Intent yas = new Intent(card3.this,examtest.class);
+                Intent yas = new Intent(MainActivity.this, card1.class);
                 startActivity(yas);
             }
         });
@@ -47,7 +37,11 @@ public class card3 extends AppCompatActivity {
         card2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent yas = new Intent(card3.this, questionpaper.class);
+                if (mInterstitialAd.isAdLoaded()) {
+
+                    mInterstitialAd.show();
+                }
+                Intent yas = new Intent(MainActivity.this,card2.class);
                 startActivity(yas);
             }
         });
@@ -57,7 +51,7 @@ public class card3 extends AppCompatActivity {
         card3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent yas = new Intent(card3.this, questionanswer.class);
+                Intent yas = new Intent(MainActivity.this, card3.class);
                 startActivity(yas);
             }
         });
@@ -68,7 +62,7 @@ public class card3 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent yas = new Intent(card3.this, videoquestion.class);
+                Intent yas = new Intent(MainActivity.this, card4.class);
                 startActivity(yas);
 
             }
@@ -79,11 +73,7 @@ public class card3 extends AppCompatActivity {
         card5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mInterstitialAd1.isAdLoaded()) {
-
-                    mInterstitialAd1.show();
-                }
-                Intent yas = new Intent(card3.this,trafficsign.class);
+                Intent yas = new Intent(MainActivity.this, card5.class);
                 startActivity(yas);
             }
         });
@@ -93,13 +83,19 @@ public class card3 extends AppCompatActivity {
         card6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent yas = new Intent(card3.this,trafficrules.class);
-                startActivity(yas);
+onBackPressed();
+
             }
         });
 
 
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        finish();
+        super.onBackPressed();
 
     }
 }

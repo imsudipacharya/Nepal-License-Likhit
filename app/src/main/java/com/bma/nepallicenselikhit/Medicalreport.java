@@ -1,4 +1,4 @@
-package com.techacharya.nepallicenselikhit;
+package com.bma.nepallicenselikhit;
 
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -18,19 +18,18 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class payment extends AppCompatActivity {
+public class Medicalreport extends AppCompatActivity {
 
     private TextView url;
     private WebView webview;
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference reference = firebaseDatabase.getReference();
-    private DatabaseReference childreference1 = reference.child("payment");
+    private DatabaseReference childreference1 = reference.child("medical");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_payment);
-
+        setContentView(R.layout.activity_medicalreport);
         url= (TextView) findViewById(R.id.url);
         webview=(WebView) findViewById(R.id.webview);
         webview = (WebView) findViewById(R.id.webview);
@@ -83,9 +82,8 @@ public class payment extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-           super.onBackPressed();
-      }
-
+         super.onBackPressed();
+       }
 
 
 }

@@ -1,4 +1,4 @@
-package com.techacharya.nepallicenselikhit;
+package com.bma.nepallicenselikhit;
 
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -7,29 +7,37 @@ import android.os.Bundle;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.facebook.ads.AdSize;
+import com.facebook.ads.AdView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class trialtips extends AppCompatActivity {
+public class examtest extends AppCompatActivity {
 
     private TextView url;
     private WebView webview;
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference reference = firebaseDatabase.getReference();
-    private DatabaseReference childreference1 = reference.child("trialtips");
+    private DatabaseReference childreference1 = reference.child("exam");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_trialtips);
+        setContentView(R.layout.activity_examtest);
+
+        AdView adView = new AdView(this, "349716825991491_386043209025519", AdSize.BANNER_HEIGHT_50);
+        LinearLayout adContainer = (LinearLayout) findViewById(R.id.banner_container);
+        adContainer.addView(adView);
+        adView.loadAd();
 
 
         url= (TextView) findViewById(R.id.url);
@@ -84,8 +92,9 @@ public class trialtips extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-         super.onBackPressed();
-       }
+
+            super.onBackPressed();
+        }
 
 
 

@@ -1,4 +1,4 @@
-package com.techacharya.nepallicenselikhit;
+package com.bma.nepallicenselikhit;
 
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -18,19 +18,18 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class trafficsign extends AppCompatActivity {
+public class taxinformation extends AppCompatActivity {
 
     private TextView url;
     private WebView webview;
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference reference = firebaseDatabase.getReference();
-    private DatabaseReference childreference1 = reference.child("sign");
+    private DatabaseReference childreference1 = reference.child("taxinformation");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_trafficsign);
-
+        setContentView(R.layout.activity_taxinformation);
 
 
         url= (TextView) findViewById(R.id.url);
@@ -85,9 +84,8 @@ public class trafficsign extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
-
-    }
+            super.onBackPressed();
+      }
 
 
 

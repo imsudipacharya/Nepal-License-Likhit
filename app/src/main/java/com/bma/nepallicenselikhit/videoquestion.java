@@ -1,4 +1,4 @@
-package com.techacharya.nepallicenselikhit;
+package com.bma.nepallicenselikhit;
 
 import android.content.Context;
 import android.content.Intent;
@@ -35,11 +35,11 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class videocolorvision extends AppCompatActivity implements MovieItemClickListener{
+public class videoquestion extends AppCompatActivity implements MovieItemClickListener{
 
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference reference = firebaseDatabase.getReference();
-    private DatabaseReference childreference = reference.child("colorvision");
+    private DatabaseReference childreference = reference.child("latest");
 
     private RecyclerView MoviesRV ;
     private MovieAdapter movieAdapter;
@@ -55,15 +55,16 @@ public class videocolorvision extends AppCompatActivity implements MovieItemClic
 
     InterstitialAd mInterstitialAd;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_videocolorvision);
+        setContentView(R.layout.activity_videoquestion);
+
 
         AudienceNetworkAds.initialize(this);
-        mInterstitialAd = new InterstitialAd(this, "349716825991491_386042779025562");
+        mInterstitialAd = new InterstitialAd(this, "349716825991491_386042649025575");
         mInterstitialAd.loadAd();
+
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setLogo(R.drawable.ic_video_player);
@@ -91,7 +92,7 @@ public class videocolorvision extends AppCompatActivity implements MovieItemClic
         }
         else {
             //or another contentview
-
+            super.onStart();
             childreference.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -136,7 +137,7 @@ public class videocolorvision extends AppCompatActivity implements MovieItemClic
                     });
 
 
-                    requestQueue = Volley.newRequestQueue(videocolorvision.this);
+                    requestQueue = Volley.newRequestQueue(videoquestion.this);
                     requestQueue.add(request);
 
 
@@ -158,7 +159,10 @@ public class videocolorvision extends AppCompatActivity implements MovieItemClic
 
     private void setuprecyclerview(List<Movie> lstMovies) {
 
+        if (mInterstitialAd.isAdLoaded()) {
 
+            mInterstitialAd.show();
+        }
         movieAdapter = new MovieAdapter(this,lstMovies,this);
         MoviesRV.setAdapter(movieAdapter);
         MoviesRV.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
@@ -169,11 +173,12 @@ public class videocolorvision extends AppCompatActivity implements MovieItemClic
 
     @Override
     public void onMovieClick(final Movie movie, ImageView movieImageView) {
-
         if (mInterstitialAd.isAdLoaded()) {
 
             mInterstitialAd.show();
-        }
+        } else{
+
+
             Intent intent = new Intent(this, play_movie.class);
             // send movie information to deatilActivity
             intent.putExtra("dlink", movie.getDlink());
@@ -181,7 +186,7 @@ public class videocolorvision extends AppCompatActivity implements MovieItemClic
             startActivity(intent);
 
 
-
+        }
 
 
     }

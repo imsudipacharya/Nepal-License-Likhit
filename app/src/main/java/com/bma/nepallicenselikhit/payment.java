@@ -1,4 +1,4 @@
-package com.techacharya.nepallicenselikhit;
+package com.bma.nepallicenselikhit;
 
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -18,19 +18,18 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class card1 extends AppCompatActivity {
+public class payment extends AppCompatActivity {
 
     private TextView url;
     private WebView webview;
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference reference = firebaseDatabase.getReference();
-    private DatabaseReference childreference1 = reference.child("online");
+    private DatabaseReference childreference1 = reference.child("payment");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_card1);
-
+        setContentView(R.layout.activity_payment);
 
         url= (TextView) findViewById(R.id.url);
         webview=(WebView) findViewById(R.id.webview);
@@ -54,19 +53,19 @@ public class card1 extends AppCompatActivity {
 
 
 
-                childreference1.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        String message = dataSnapshot.getValue(String.class);
-                        url.getText();
-                        webview.loadUrl(message);
-                    }
+        childreference1.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String message = dataSnapshot.getValue(String.class);
+                url.getText();
+                webview.loadUrl(message);
+            }
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                    }
-                });
+            }
+        });
 
 
 

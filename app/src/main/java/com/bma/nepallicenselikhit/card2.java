@@ -1,4 +1,4 @@
-package com.techacharya.nepallicenselikhit;
+package com.bma.nepallicenselikhit;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,25 +10,29 @@ import androidx.cardview.widget.CardView;
 import com.facebook.ads.AudienceNetworkAds;
 import com.facebook.ads.InterstitialAd;
 
-public class card4 extends AppCompatActivity {
+public class card2 extends AppCompatActivity {
 
-    private InterstitialAd mInterstitialAd;
+    private InterstitialAd mInterstitialAda;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_card4);
+        setContentView(R.layout.activity_card2);
 
         AudienceNetworkAds.initialize(this);
-        mInterstitialAd = new InterstitialAd(this, "349716825991491_386042439025596");
-        mInterstitialAd.loadAd();
+        mInterstitialAda = new InterstitialAd(this, "349716825991491_386042649025575");
+        mInterstitialAda.loadAd();
 
 
         final CardView card1 = findViewById(R.id.card1);
         card1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent yas = new Intent(card4.this, trialtips.class);
+                if (mInterstitialAda.isAdLoaded()) {
+
+                    mInterstitialAda.show();
+                }
+                Intent yas = new Intent(card2.this,colorvision.class);
                 startActivity(yas);
             }
         });
@@ -38,18 +42,20 @@ public class card4 extends AppCompatActivity {
         card2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mInterstitialAd.isAdLoaded()) {
-
-                    mInterstitialAd.show();
-                }
-                Intent yas = new Intent(card4.this, Main4Activity.class);
+                Intent yas = new Intent(card2.this, Medicalreport.class);
                 startActivity(yas);
             }
         });
 
 
-
-
+        CardView card3 = findViewById(R.id.card3);
+        card3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent yas = new Intent(card2.this, videocolorvision.class);
+                startActivity(yas);
+            }
+        });
 
     }
 }
