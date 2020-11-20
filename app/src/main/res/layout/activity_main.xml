@@ -96,6 +96,8 @@
                                 android:text="Online Form "
                                 android:textColor="@color/colorPrimaryDark"
                                 android:textSize="20dp"
+                                android:layout_gravity="center"
+                                android:gravity="center"
                                 android:textStyle="bold" />
 
                             <View
@@ -144,6 +146,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="10dp"
                                 android:text="Document Submission"
+                                android:layout_gravity="center"
+                                android:gravity="center"
                                 android:textColor="@color/colorPrimaryDark"
                                 android:textSize="20dp"
                                 android:textStyle="bold" />
@@ -208,6 +212,8 @@
                                 android:text="Written Exam"
                                 android:textColor="@color/colorPrimaryDark"
                                 android:textSize="20dp"
+                                android:layout_gravity="center"
+                                android:gravity="center"
                                 android:textStyle="bold" />
 
                             <View
@@ -257,6 +263,8 @@
                                 android:text="Trial Tips्"
                                 android:textColor="@color/colorPrimaryDark"
                                 android:textSize="20dp"
+                                android:layout_gravity="center"
+                                android:gravity="center"
                                 android:textStyle="bold" />
 
                             <View
@@ -316,6 +324,8 @@
                                 android:text="Payment &amp; License"
                                 android:textColor="@color/colorPrimaryDark"
                                 android:textSize="20dp"
+                                android:layout_gravity="center"
+                                android:gravity="center"
                                 android:textStyle="bold" />
 
                             <View
@@ -365,6 +375,8 @@
                                 android:text="Exit"
                                 android:textColor="@color/colorPrimaryDark"
                                 android:textSize="20dp"
+                                android:layout_gravity="center"
+                                android:gravity="center"
                                 android:textStyle="bold" />
 
                             <View
