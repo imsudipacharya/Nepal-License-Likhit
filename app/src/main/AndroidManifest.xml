@@ -2,9 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bma.nepallicenselikhit">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/bitmap"
         android:label="@string/app_name"
         android:roundIcon="@drawable/bitmap"
         android:supportsRtl="true"

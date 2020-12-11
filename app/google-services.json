@@ -8,17 +8,17 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:564654669198:android:f84bd22e9fde3ed8ae38df",
+        "mobilesdk_app_id": "1:564654669198:android:709a799745f6c7bdae38df",
         "android_client_info": {
-          "package_name": "com.techacharya.nepallicenselikhit"
+          "package_name": "com.bma.nepallicenselikhit"
         }
       },
       "oauth_client": [
         {
-          "client_id": "564654669198-o2vlj8701ne0n6llcg4d84vialdaqjhq.apps.googleusercontent.com",
+          "client_id": "564654669198-shm1bi2d29vmudk3uis8ep1gvt6biv28.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.techacharya.nepallicenselikhit",
+            "package_name": "com.bma.nepallicenselikhit",
             "certificate_hash": "457a529af81e7ef4c7b88472bb10c26304ea6a69"
           }
         },
