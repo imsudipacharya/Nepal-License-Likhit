@@ -90,7 +90,7 @@ public class Main4Activity extends AppCompatActivity implements MovieItemClickLi
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     message = dataSnapshot.getValue(String.class);
-                    latest.getText();
+                   // latest.getText();
 
                     lstMovies = new ArrayList<>();
 
