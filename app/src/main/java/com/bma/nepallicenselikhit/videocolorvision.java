@@ -62,7 +62,7 @@ public class videocolorvision extends AppCompatActivity implements MovieItemClic
         setContentView(R.layout.activity_videocolorvision);
 
         AudienceNetworkAds.initialize(this);
-        mInterstitialAd = new InterstitialAd(this, "349716825991491_386042779025562");
+        mInterstitialAd = new InterstitialAd(this, "662039251176326_662040187842899");
         mInterstitialAd.loadAd();
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);

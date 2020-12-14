@@ -20,7 +20,7 @@ public class card4 extends AppCompatActivity {
         setContentView(R.layout.activity_card4);
 
         AudienceNetworkAds.initialize(this);
-        mInterstitialAd = new InterstitialAd(this, "349716825991491_386042439025596");
+        mInterstitialAd = new InterstitialAd(this, "662039251176326_662039991176252");
         mInterstitialAd.loadAd();
 
 

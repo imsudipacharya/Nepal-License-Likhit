@@ -20,7 +20,7 @@ public class colorvision extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_colorvision);
 
-        AdView adView = new AdView(this, "349716825991491_386043209025519", AdSize.BANNER_HEIGHT_50);
+        AdView adView = new AdView(this, "662039251176326_662040704509514", AdSize.BANNER_HEIGHT_50);
         LinearLayout adContainer = (LinearLayout) findViewById(R.id.banner_container);
         adContainer.addView(adView);
         adView.loadAd();

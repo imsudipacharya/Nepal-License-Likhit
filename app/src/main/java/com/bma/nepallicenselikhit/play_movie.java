@@ -26,7 +26,7 @@ public class play_movie extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.playmovie);
 
-        AdView adView = new AdView(this, "349716825991491_386043142358859", AdSize.BANNER_HEIGHT_50);
+        AdView adView = new AdView(this, "662039251176326_662040704509514", AdSize.BANNER_HEIGHT_50);
         LinearLayout adContainer = (LinearLayout) findViewById(R.id.banner_container);
         adContainer.addView(adView);
         adView.loadAd();

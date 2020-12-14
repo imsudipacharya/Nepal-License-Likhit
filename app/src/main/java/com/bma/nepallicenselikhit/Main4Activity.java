@@ -62,7 +62,7 @@ public class Main4Activity extends AppCompatActivity implements MovieItemClickLi
         setContentView(R.layout.activity_main4);
 
         AudienceNetworkAds.initialize(this);
-        mInterstitialAd = new InterstitialAd(this, "349716825991491_386042302358943");
+        mInterstitialAd = new InterstitialAd(this, "662039251176326_662040074509577");
         mInterstitialAd.loadAd();
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);

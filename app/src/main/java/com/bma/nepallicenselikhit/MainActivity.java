@@ -11,15 +11,34 @@ import com.facebook.ads.AudienceNetworkAds;
 import com.facebook.ads.InterstitialAd;
 
 public class MainActivity extends AppCompatActivity {
-private InterstitialAd mInterstitialAd;
+private InterstitialAd mInterstitialAd, mInterstitialAd1, mInterstitialAd2, mInterstitialAd3, mInterstitialAd4;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         AudienceNetworkAds.initialize(this);
-        mInterstitialAd = new InterstitialAd(this, "349716825991491_349717149324792");
+        mInterstitialAd = new InterstitialAd(this, "662039251176326_662039454509639");
         mInterstitialAd.loadAd();
+
+        AudienceNetworkAds.initialize(this);
+        mInterstitialAd1 = new InterstitialAd(this, "662039251176326_662040301176221");
+        mInterstitialAd1.loadAd();
+
+
+        AudienceNetworkAds.initialize(this);
+        mInterstitialAd2 = new InterstitialAd(this, "662039251176326_662040394509545");
+        mInterstitialAd2.loadAd();
+
+
+        AudienceNetworkAds.initialize(this);
+        mInterstitialAd3 = new InterstitialAd(this, "662039251176326_662040467842871");
+        mInterstitialAd3.loadAd();
+
+
+        AudienceNetworkAds.initialize(this);
+        mInterstitialAd4 = new InterstitialAd(this, "662039251176326_662040554509529");
+        mInterstitialAd4.loadAd();
 
 
 
@@ -51,6 +70,10 @@ private InterstitialAd mInterstitialAd;
         card3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (mInterstitialAd2.isAdLoaded()) {
+
+                    mInterstitialAd2.show();
+                }
                 Intent yas = new Intent(MainActivity.this, card3.class);
                 startActivity(yas);
             }
@@ -61,7 +84,10 @@ private InterstitialAd mInterstitialAd;
         card4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (mInterstitialAd3.isAdLoaded()) {
 
+                    mInterstitialAd3.show();
+                }
                 Intent yas = new Intent(MainActivity.this, card4.class);
                 startActivity(yas);
 
@@ -73,6 +99,10 @@ private InterstitialAd mInterstitialAd;
         card5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (mInterstitialAd4.isAdLoaded()) {
+
+                    mInterstitialAd4.show();
+                }
                 Intent yas = new Intent(MainActivity.this, card5.class);
                 startActivity(yas);
             }
@@ -87,13 +117,14 @@ onBackPressed();
 
             }
         });
-
-
-
     }
 
     @Override
     public void onBackPressed() {
+        if (mInterstitialAd1.isAdLoaded()) {
+
+            mInterstitialAd1.show();
+        }
         finish();
         super.onBackPressed();
 

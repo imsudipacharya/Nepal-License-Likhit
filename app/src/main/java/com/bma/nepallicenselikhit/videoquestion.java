@@ -62,7 +62,7 @@ public class videoquestion extends AppCompatActivity implements MovieItemClickLi
 
 
         AudienceNetworkAds.initialize(this);
-        mInterstitialAd = new InterstitialAd(this, "349716825991491_386042649025575");
+        mInterstitialAd = new InterstitialAd(this, "662039251176326_662040301176221");
         mInterstitialAd.loadAd();
 
 
